@@ -1,0 +1,13 @@
+import qrcode
+
+qr = qrcode.QRCode(
+    version=1,
+    error_correction = qrcode.constants.ERROR_CORRECT_L,
+  box_size=10,
+  border=4  
+)
+
+qr.add_data("https://docs.google.com/forms/d/e/1FAIpQLScUW-5S0yzR7QffqdKt5RTdtlL-o72mtsm3zT55WZoLUT1PIg/viewform?usp=sf_link")
+
+img = qr.make_image()
+img.save("qrcode.jpg")
